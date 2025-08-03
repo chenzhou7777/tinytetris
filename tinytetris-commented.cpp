@@ -1,8 +1,8 @@
 #include <ctime>
 #include <curses.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 // block layout is: {w-1,h-1}{x0,y0}{x1,y1}{x2,y2}{x3,y3} (two bits each)
 int x = 431424, y = 598356, r = 427089, px = 247872, py = 799248, pr,
@@ -50,7 +50,7 @@ void set_piece(int x, int y, int r, int v) {
 }
 
 // move a piece from old (p*) coords to new
-int update_piece() {
+void update_piece() {
   set_piece(px, py, pr, 0);
   set_piece(px = x, py = y, pr = r, p + 1);
 }
